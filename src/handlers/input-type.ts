@@ -76,6 +76,7 @@ export function inputType(
   const isWhereUnique = isWhereUniqueInputType(inputType.name);
 
   for (const field of inputType.fields) {
+    // @ts-expect-error
     field.inputTypes = field.inputTypes.filter(t => !removeTypes.has(String(t.type)));
 
     eventEmitter.emitSync(BeforeGenerateField, field, args);

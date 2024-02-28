@@ -30,7 +30,7 @@ generator nestgraphql {
 2. Run prisma generate
 
 ```sh
-npx prisma generate
+yarn prisma generate
 ```
 
 3. If your models have `Decimal` and `Json` types, you need install:

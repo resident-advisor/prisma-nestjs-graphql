@@ -25,6 +25,7 @@ export function modelData(model: DMMF.Model, args: EventArguments) {
         text: field.documentation,
         config,
       });
+      // @ts-expect-error
       field.documentation = documentation;
       fieldSettingsValue.set(field.name, settings);
     }

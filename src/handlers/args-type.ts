@@ -40,6 +40,7 @@ export function argsType(field: SchemaField, args: EventArguments) {
       // Make `by` property array only, noEnumerable
       const byField = inputType.fields.find(f => f.name === 'by');
       if (byField?.inputTypes) {
+        // @ts-expect-error
         byField.inputTypes = byField.inputTypes.filter(inputType => inputType.isList);
       }
     }
@@ -48,6 +49,7 @@ export function argsType(field: SchemaField, args: EventArguments) {
         continue;
       }
 
+      // @ts-expect-error
       inputType.fields.push({
         name: `_${name.toLowerCase()}`,
         isRequired: false,

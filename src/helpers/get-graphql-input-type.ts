@@ -7,7 +7,7 @@ import { DMMF } from '../types';
  * Find input type for graphql field decorator.
  */
 export function getGraphqlInputType(
-  inputTypes: DMMF.InputTypeRef[],
+  inputTypes: DMMF.SchemaArg['inputTypes'],
   pattern?: string,
 ) {
   let result: DMMF.InputTypeRef | undefined;

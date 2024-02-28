@@ -15,7 +15,9 @@ function beforeInputType(args: EventArguments & { inputType: InputType }) {
   }
 
   for (const field of inputType.fields) {
+    // @ts-expect-error
     field.isRequired = true;
+    // @ts-expect-error
     field.isNullable = false;
   }
 }

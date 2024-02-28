@@ -117,6 +117,30 @@ async function prepareCachePath(): Promise<string> {
     fs.mkdirSync(result, { recursive: true });
   }
 
+  try {
+    fs.unlinkSync(`${result}/package.json`);
+  } catch (e) {
+    console.error(e);
+  }
+
+  try {
+    fs.unlinkSync(`${result}/node_modules`);
+  } catch (e) {
+    console.error(e);
+  }
+
+  try {
+    fs.symlinkSync(`${process.cwd()}/package.json`, `${result}/package.json`);
+  } catch (e) {
+    console.error(e);
+  }
+
+  try {
+    fs.symlinkSync(`${process.cwd()}/node_modules`, `${result}/node_modules`);
+  } catch (e) {
+    console.error(e);
+  }
+
   return result;
 }
 
@@ -158,7 +182,7 @@ async function createGeneratorOptions(
 
     await new Promise((resolve, reject) => {
       const proc = exec(
-        `node node_modules/prisma/build/index.js generate --schema=${schemaFile}`,
+        `yarn prisma generate --schema=${schemaFile}`,
       );
       if (!proc.stderr) {
         throw new Error('Generate error');

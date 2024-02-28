@@ -30,22 +30,22 @@ jobs:
       - name: 'Install depependencies'
         run: yarn install
       - name: 'Regenerate'
-        run: npm run regen
+        run: yarn regen
       - name: 'ESLint'
         run: |
-          npm run eslint
+          yarn eslint
       - name: 'tscheck'
         run: |
-          npm run tscheck
+          yarn tscheck
       - name: 'Test'
         run: |
-          npm run test:cov -- --bail
+          yarn test:cov -- --bail
       - name: 'Test Build'
         run: |
-          npm run build
+          yarn build
       - name: 'Compatibilty Check'
         run: |
-          npm run compatibilty_check
+          yarn compatibilty_check
   release:
     name: 'Release'
     runs-on: ubuntu-latest
@@ -61,10 +61,10 @@ jobs:
       - name: 'Install depependencies'
         run: yarn install
       - name: 'Build'
-        run: npm run build
+        run: yarn build
       - name: 'Release'
         run: |
-          npx semantic-release
+          yarn semantic-release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

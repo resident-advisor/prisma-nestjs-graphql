@@ -30,6 +30,7 @@ export function outputType(outputType: OutputType, args: EventArguments) {
   if (!config.emitBlocks.outputs && !isCountOutput) return;
 
   // Get rid of bogus suffixes
+  // @ts-expect-error
   outputType.name = getOutputTypeName(outputType.name);
 
   if (isAggregateOutput) {
@@ -70,6 +71,7 @@ export function outputType(outputType: OutputType, args: EventArguments) {
     const isCustomsApplicable =
       outputTypeName === model?.fields.find(f => f.name === field.name)?.type;
 
+    // @ts-expect-error
     field.outputType.type = outputTypeName;
 
     const propertyType = castArray(

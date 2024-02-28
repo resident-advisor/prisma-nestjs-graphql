@@ -12,6 +12,7 @@ function beforeInputType(args: EventArguments & { inputType: InputType }) {
 
   for (const field of inputType.fields) {
     const fieldName = field.name;
+    // @ts-expect-error
     field.inputTypes = field.inputTypes.filter(inputType => {
       const inputTypeName = String(inputType.type);
       const modelName = getModelName(inputTypeName);

@@ -24,6 +24,7 @@ function beforeInputType(
 
   if (isContainBogus(inputType.name) && isScalarFilter(inputType)) {
     removeTypes.add(inputType.name);
+    // @ts-expect-error
     inputType.name = replaceBogus(inputType.name);
   }
 }
@@ -35,6 +36,7 @@ function beforeGenerateField(field: DMMF.SchemaArg): void {
     }
     const fieldInputType = String(fieldInput.type);
     if (isContainBogus(fieldInputType)) {
+      // @ts-expect-error
       fieldInput.type = replaceBogus(fieldInputType);
     }
   }
@@ -93,6 +95,7 @@ function postBegin(args: EventArguments) {
       const candidate = inputTypeByName[filterNameCandidate];
       if (candidate as InputType | undefined) {
         const inputType = cloneDeep({ ...candidate, name: filterName });
+        // @ts-expect-error
         inputTypes.push(inputType);
         inputTypeByName[filterName] = inputType;
         break;
