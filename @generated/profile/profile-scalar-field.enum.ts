@@ -6,7 +6,4 @@ export enum ProfileScalarFieldEnum {
   dummy = 'dummy',
 }
 
-registerEnumType(ProfileScalarFieldEnum, {
-  name: 'ProfileScalarFieldEnum',
-  description: undefined,
-});
+registerEnumType(ProfileScalarFieldEnum, { name: 'ProfileScalarFieldEnum' });

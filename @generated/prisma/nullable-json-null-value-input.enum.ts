@@ -5,7 +5,4 @@ export enum NullableJsonNullValueInput {
   JsonNull = 'JsonNull',
 }
 
-registerEnumType(NullableJsonNullValueInput, {
-  name: 'NullableJsonNullValueInput',
-  description: undefined,
-});
+registerEnumType(NullableJsonNullValueInput, { name: 'NullableJsonNullValueInput' });

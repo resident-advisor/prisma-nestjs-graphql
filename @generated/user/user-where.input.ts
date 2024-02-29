@@ -32,7 +32,7 @@ export class UserWhereInput {
   @Field(() => StringFilter, { nullable: true })
   email?: StringFilter;
 
-  @Field(() => StringFilter, { nullable: true })
+  @Field(() => StringFilter, { nullable: true, description: "User's name" })
   name?: StringFilter;
 
   @Field(() => StringFilter, { nullable: true })

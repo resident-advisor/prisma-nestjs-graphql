@@ -24,7 +24,7 @@ export class UserWhereUniqueInput {
   @Field(() => Scalars.GraphQLEmailAddress, { nullable: true })
   email?: string;
 
-  @Field(() => String, { nullable: true })
+  @Field(() => String, { nullable: true, description: "User's name" })
   @Validator.MinLength(3)
   @Validator.MaxLength(50)
   name?: string;

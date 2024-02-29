@@ -5,4 +5,4 @@ export enum NullsOrder {
   last = 'last',
 }
 
-registerEnumType(NullsOrder, { name: 'NullsOrder', description: undefined });
+registerEnumType(NullsOrder, { name: 'NullsOrder' });

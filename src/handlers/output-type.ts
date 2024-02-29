@@ -157,6 +157,7 @@ export function outputType(outputType: OutputType, args: EventArguments) {
       importDeclarations.add('HideField', nestjsGraphql);
       property.decorators.push({ name: 'HideField', arguments: [] });
     } else {
+      const modelField = model?.fields.find((f) => f.name === field.name);
       // Generate `@Field()` decorator
       property.decorators.push({
         name: 'Field',
@@ -165,6 +166,7 @@ export function outputType(outputType: OutputType, args: EventArguments) {
           JSON5.stringify({
             ...settings?.fieldArguments(),
             nullable: Boolean(field.isNullable),
+            description: modelField?.documentation,
           }),
         ],
       });

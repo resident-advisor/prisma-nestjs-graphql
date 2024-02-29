@@ -7,7 +7,4 @@ export enum TransactionIsolationLevel {
   Serializable = 'Serializable',
 }
 
-registerEnumType(TransactionIsolationLevel, {
-  name: 'TransactionIsolationLevel',
-  description: undefined,
-});
+registerEnumType(TransactionIsolationLevel, { name: 'TransactionIsolationLevel' });

@@ -11,5 +11,4 @@ export enum UserOrderByRelevanceFieldEnum {
 
 registerEnumType(UserOrderByRelevanceFieldEnum, {
   name: 'UserOrderByRelevanceFieldEnum',
-  description: undefined,
 });

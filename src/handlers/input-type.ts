@@ -209,6 +209,7 @@ export function inputType(
           JSON5.stringify({
             ...settings?.fieldArguments(),
             nullable: !isRequired,
+            description: modelField?.documentation,
           }),
         ],
       });

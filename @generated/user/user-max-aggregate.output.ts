@@ -15,7 +15,7 @@ export class UserMaxAggregate {
   @Field(() => String, { nullable: true })
   email?: string;
 
-  @Field(() => String, { nullable: true })
+  @Field(() => String, { nullable: true, description: "User's name" })
   name?: string;
 
   @HideField()

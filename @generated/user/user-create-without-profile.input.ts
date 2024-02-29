@@ -24,7 +24,7 @@ export class UserCreateWithoutProfileInput {
   @Field(() => Scalars.GraphQLEmailAddress, { nullable: false })
   email!: string;
 
-  @Field(() => String, { nullable: false })
+  @Field(() => String, { nullable: false, description: "User's name" })
   @Validator.MinLength(3)
   @Validator.MaxLength(50)
   name!: string;

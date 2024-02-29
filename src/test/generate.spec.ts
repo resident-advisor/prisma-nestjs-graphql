@@ -732,8 +732,8 @@ describe('one model with enum', () => {
       schema: `
             /// Role really
             enum Role {
-                  USER
-                  ADMIN
+                  USER /// User role
+                  ADMIN /// Admin role
                 }
             model User {
                   id    Int   @id
@@ -754,7 +754,7 @@ describe('one model with enum', () => {
   it('should register SortOrder', () => {
     const s = testSourceFile({ project, file: 'sort-order.enum.ts' });
     expect(s.sourceText).toContain(
-      `registerEnumType(SortOrder, { name: 'SortOrder', description: undefined })`,
+      `registerEnumType(SortOrder, { name: 'SortOrder' })`,
     );
   });
 
@@ -794,6 +794,8 @@ describe('one model with enum', () => {
 
     it('should contains', () => {
       expect(sourceText).toContain(`description: "Role really"`);
+      expect(sourceText).toContain(`description: 'User role'`);
+      expect(sourceText).toContain(`description: 'Admin role'`);
     });
   });
 
@@ -1047,7 +1049,7 @@ it('several models', () => {
       .flatMap(s => s.getClasses())
       .flatMap(d => d.getProperties())
       .flatMap(p => p.getDecorators())) {
-      const argument = d.getCallExpression()?.getArguments()?.[0].getText();
+      const argument = d.getCallExpression()?.getArguments()[0].getText();
       expect(argument).not.toContain('null');
     }
   });

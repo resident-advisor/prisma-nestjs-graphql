@@ -17,7 +17,7 @@ export class UserOrderByWithAggregationInput {
   @Field(() => SortOrder, { nullable: true })
   email?: keyof typeof SortOrder;
 
-  @Field(() => SortOrder, { nullable: true })
+  @Field(() => SortOrder, { nullable: true, description: "User's name" })
   name?: keyof typeof SortOrder;
 
   @Field(() => SortOrder, { nullable: true })

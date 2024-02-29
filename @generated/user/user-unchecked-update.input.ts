@@ -22,7 +22,10 @@ export class UserUncheckedUpdateInput {
   @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
   email?: StringFieldUpdateOperationsInput;
 
-  @Field(() => StringFieldUpdateOperationsInput, { nullable: true })
+  @Field(() => StringFieldUpdateOperationsInput, {
+    nullable: true,
+    description: "User's name",
+  })
   name?: StringFieldUpdateOperationsInput;
 
   @Field(() => StringFieldUpdateOperationsInput, { nullable: true })

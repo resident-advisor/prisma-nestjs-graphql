@@ -15,5 +15,5 @@ export enum UserScalarFieldEnum {
 
 registerEnumType(UserScalarFieldEnum, {
   name: 'UserScalarFieldEnum',
-  description: undefined,
+  valuesMap: { name: { description: "User's name" } },
 });

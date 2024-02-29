@@ -7,5 +7,4 @@ export enum TagOrderByRelevanceFieldEnum {
 
 registerEnumType(TagOrderByRelevanceFieldEnum, {
   name: 'TagOrderByRelevanceFieldEnum',
-  description: undefined,
 });

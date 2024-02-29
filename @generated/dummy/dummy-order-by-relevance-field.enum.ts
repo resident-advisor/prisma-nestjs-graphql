@@ -7,5 +7,4 @@ export enum DummyOrderByRelevanceFieldEnum {
 
 registerEnumType(DummyOrderByRelevanceFieldEnum, {
   name: 'DummyOrderByRelevanceFieldEnum',
-  description: undefined,
 });

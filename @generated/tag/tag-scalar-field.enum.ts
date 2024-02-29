@@ -5,7 +5,4 @@ export enum TagScalarFieldEnum {
   name = 'name',
 }
 
-registerEnumType(TagScalarFieldEnum, {
-  name: 'TagScalarFieldEnum',
-  description: undefined,
-});
+registerEnumType(TagScalarFieldEnum, { name: 'TagScalarFieldEnum' });

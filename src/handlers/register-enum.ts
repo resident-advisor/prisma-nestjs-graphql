@@ -1,3 +1,4 @@
+import JSON5 from 'json5';
 import { EnumDeclarationStructure, StructureKind } from 'ts-morph';
 
 import { ImportDeclarationMap } from '../helpers/import-declaration-map';
@@ -9,6 +10,7 @@ export function registerEnum(enumType: SchemaEnum, args: EventArguments) {
   if (!config.emitBlocks.prismaEnums && !enums[enumType.name]) return;
 
   const dataModelEnum = enums[enumType.name];
+  const model = args.models.get(enumType.name.replace('ScalarFieldEnum', ''));
   const sourceFile = getSourceFile({
     name: enumType.name,
     type: 'enum',
@@ -31,14 +33,25 @@ export function registerEnum(enumType: SchemaEnum, args: EventArguments) {
     })),
   };
 
+  const valuesMap = (dataModelEnum?.values
+    || enumType.values.map((value) => ({ name: value, documentation: model?.fields.find((f) => f.name === value)?.documentation })))
+    .reduce((valuesMap, value) => {
+      if (value['documentation']) {
+        valuesMap[value.name] = {
+          description: value['documentation']
+        };
+      }
+
+      return valuesMap;
+    }, {});
+  const description = dataModelEnum == undefined ? undefined : dataModelEnum.documentation;
+
   sourceFile.set({
     statements: [
       ...importDeclarations.toStatements(),
       enumStructure,
       '\n',
-      `registerEnumType(${enumType.name}, { name: '${
-        enumType.name
-      }', description: ${JSON.stringify(dataModelEnum?.documentation)} })`,
+      `registerEnumType(${enumType.name}, { name: '${enumType.name}'${description ? `, description: ${JSON.stringify(description)}` : ''}${Object.keys(valuesMap).length > 0 ? `, valuesMap: ${JSON5.stringify(valuesMap, { space: ' ' })}` : ''} });`,
     ],
   });
 }

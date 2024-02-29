@@ -20,7 +20,7 @@ export class UserGroupBy {
   @Field(() => String, { nullable: false })
   email!: string;
 
-  @Field(() => String, { nullable: false })
+  @Field(() => String, { nullable: false, description: "User's name" })
   name!: string;
 
   @HideField()

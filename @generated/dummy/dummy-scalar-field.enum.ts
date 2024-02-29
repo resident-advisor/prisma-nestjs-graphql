@@ -13,7 +13,4 @@ export enum DummyScalarFieldEnum {
   friends = 'friends',
 }
 
-registerEnumType(DummyScalarFieldEnum, {
-  name: 'DummyScalarFieldEnum',
-  description: undefined,
-});
+registerEnumType(DummyScalarFieldEnum, { name: 'DummyScalarFieldEnum' });

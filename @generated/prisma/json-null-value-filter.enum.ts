@@ -6,7 +6,4 @@ export enum JsonNullValueFilter {
   AnyNull = 'AnyNull',
 }
 
-registerEnumType(JsonNullValueFilter, {
-  name: 'JsonNullValueFilter',
-  description: undefined,
-});
+registerEnumType(JsonNullValueFilter, { name: 'JsonNullValueFilter' });

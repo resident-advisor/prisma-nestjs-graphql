@@ -104,8 +104,9 @@ model Comment {
   articleId String?
 }
 
+/// Roles enum
 enum Role {
-  USER
+  USER /// User role
 }
 
 model Profile {

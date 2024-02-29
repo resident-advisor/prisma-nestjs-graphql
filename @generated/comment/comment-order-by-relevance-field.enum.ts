@@ -9,5 +9,4 @@ export enum CommentOrderByRelevanceFieldEnum {
 
 registerEnumType(CommentOrderByRelevanceFieldEnum, {
   name: 'CommentOrderByRelevanceFieldEnum',
-  description: undefined,
 });
