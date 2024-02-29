@@ -22,9 +22,9 @@ jobs:
           # - windows-latest
     steps:
       - name: 'Checkout repository'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: 'Setup Node ${{ matrix.node }}'
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '${{ matrix.node }}'
       - name: 'Install depependencies'
@@ -48,16 +48,22 @@ jobs:
           yarn compatibilty_check
   release:
     name: 'Release'
-    runs-on: ubuntu-latest
+    runs-on: '${{ matrix.os }}'
+    strategy:
+      matrix:
+        node:
+          - 20
+        os:
+          - ubuntu-latest
     needs: build
     if: github.event_name == 'push' && (github.ref == 'refs/heads/master' || github.ref == 'refs/heads/next')
     steps:
       - name: 'Checkout repository'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
       - name: 'Setup Node'
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: '${{ matrix.node }}'
       - name: 'Install depependencies'
         run: yarn install
       - name: 'Build'
