@@ -7,5 +7,9 @@ export enum Role {
 registerEnumType(Role, {
   name: 'Role',
   description: 'Roles enum',
-  valuesMap: { USER: { description: 'User role' } },
+  valuesMap: {
+    USER: {
+      description: 'User role',
+    },
+  },
 });
