@@ -9,12 +9,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/resident-advisor/nestjs-graphql-prisma.git"
+    "url": "https://github.com/resident-advisor/prisma-nestjs-graphql.git"
   },
   "bugs": {
-    "url": "https://github.com/unlight/nestjs-graphql-prisma/issues"
+    "url": "https://github.com/resident-advisor/prisma-nestjs-graphql/issues"
   },
-  "homepage": "https://github.com/unlight/nestjs-graphql-prisma#readme",
+  "homepage": "https://github.com/resident-advisor/prisma-nestjs-graphql#readme",
   "keywords": [
     "nestjs",
     "graphql",
