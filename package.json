@@ -1,10 +1,16 @@
 {
-  "name": "prisma-nestjs-graphql",
+  "name": "@resident-advisor/prisma-nestjs-graphql",
   "version": "0.0.0-dev",
   "license": "MIT",
   "description": "Generate object types, inputs, args, etc. from prisma schema file for usage with @nestjs/graphql module",
   "bin": "bin.js",
-  "repository": "https://github.com/unlight/nestjs-graphql-prisma.git",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/resident-advisor/nestjs-graphql-prisma.git"
+  },
   "bugs": {
     "url": "https://github.com/unlight/nestjs-graphql-prisma/issues"
   },
