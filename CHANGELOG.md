@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/resident-advisor/prisma-nestjs-graphql/compare/v1.0.1...v1.0.2) (2024-03-20)
+
+
+### Bug Fixes
+
+* Remove prepare script ([ff2c1bd](https://github.com/resident-advisor/prisma-nestjs-graphql/commit/ff2c1bdb4b65f3ad8655b5481180d8ad3b181b07))
+
 ## [1.0.1](https://github.com/resident-advisor/prisma-nestjs-graphql/compare/v1.0.0...v1.0.1) (2024-03-20)
 
 
