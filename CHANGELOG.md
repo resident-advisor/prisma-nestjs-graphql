@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/resident-advisor/prisma-nestjs-graphql/compare/v1.0.0...v1.0.1) (2024-03-20)
+
+
+### Bug Fixes
+
+* Use prepare instead of postinstall ([38633fd](https://github.com/resident-advisor/prisma-nestjs-graphql/commit/38633fd923eb1619d9194dd276d4bce0d5b53468))
+
 ## 1.0.0 (2024-03-20)
 
 
